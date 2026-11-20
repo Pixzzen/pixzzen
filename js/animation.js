@@ -125,7 +125,7 @@
         };
         new IntersectionObserver(function (entries) {
             if (entries[0].isIntersecting) {
-                if (!timer && idx < steps.length) { stepsWrap.classList.add('flow-started'); tick(); if (idx < steps.length) timer = setInterval(tick, 1500); }
+                if (!timer && idx < steps.length) { stepsWrap.classList.add('flow-started'); tick(); if (idx < steps.length) timer = setInterval(tick, 1100); }
             } else if (timer) {
                 clearInterval(timer);
                 timer = null;

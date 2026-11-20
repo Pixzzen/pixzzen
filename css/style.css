@@ -635,7 +635,7 @@ h1 .y {
 .steps {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 12px;
     counter-reset: none;
 }
@@ -2118,7 +2118,7 @@ select option {
 
 /* Circular process steps */
 .steps {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     align-items: start;
     gap: 8px;
 }
@@ -2128,9 +2128,9 @@ select option {
 }
 
 .process-circle {
-    width: 155px;
+    width: min(100%, 220px);
     height: auto;
-    max-width: 100%;
+    max-width: 75%;
     aspect-ratio: 1;
     margin: 0 auto;
     padding: 12px 8px 9px;
@@ -2205,8 +2205,8 @@ select option {
 }
 
 .process-step p {
-    max-width: 124px;
-    font-size: 9.5px;
+    max-width: 100%;
+    font-size: 11px;
     line-height: 1.18;
 }
 

@@ -259,7 +259,6 @@ body {
 .steps .process-step:nth-child(3) { --d: .2s; }
 .steps .process-step:nth-child(4) { --d: .3s; }
 .steps .process-step:nth-child(5) { --d: .4s; }
-.steps .process-step:nth-child(6) { --d: .5s; }
 
 /* ---------- about ---------- */
 .about-visual { transition: border-color .4s, box-shadow .4s; }
@@ -413,7 +412,7 @@ body {
 .process-circle {
     transition: scale .4s var(--ease), box-shadow .4s;
 }
-.process-circle:before { animation: spinRing 7s linear infinite; }
+.process-circle:before { animation: spinRing 5s linear infinite; }
 .process-circle:after { transition: box-shadow .4s, border-color .4s; }
 .process-icon { display: inline-block; transition: scale .4s var(--ease), color .4s; }
 .process-number { transition: color .4s; }

@@ -140,7 +140,7 @@
     if (slider) {
         var track = slider.querySelector('.testimonial-track');
         var quotes = $('.quote', track);
-        var first = 0, perPage = 3, autoplay = null, paused = false;
+        var first = 0, perPage = window.matchMedia('(max-width: 700px)').matches ? 1 : 3, autoplay = null, paused = false;
         function showPage(next) {
             first = (next + quotes.length) % quotes.length;
             quotes.forEach(function (q, i) { q.hidden = ((i - first + quotes.length) % quotes.length) >= perPage; });
@@ -149,6 +149,10 @@
         function stopAuto() { clearInterval(autoplay); autoplay = null; }
         slider.querySelector('[data-testimonial-prev]').addEventListener('click', function () { showPage(first - 1); });
         slider.querySelector('[data-testimonial-next]').addEventListener('click', function () { showPage(first + 1); });
+        window.addEventListener('resize', function () {
+            var nextPerPage = window.matchMedia('(max-width: 700px)').matches ? 1 : 3;
+            if (nextPerPage !== perPage) { perPage = nextPerPage; showPage(first); }
+        });
         slider.addEventListener('mouseenter', function () { paused = true; stopAuto(); });
         slider.addEventListener('mouseleave', function () { paused = false; startAuto(); });
         slider.addEventListener('focusin', function () { paused = true; stopAuto(); });

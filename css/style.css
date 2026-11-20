@@ -1208,7 +1208,7 @@ h1 .y {
     position: relative;
     z-index: 0;
     width: calc(93% + 20px);
-    margin: -170px -20px -10px 27px;
+    margin: -10px -20px -10px 27px;
 }
 
 .project-update-art img {
@@ -2208,13 +2208,18 @@ select option {
     max-width: 100%;
     font-size: 11px;
     line-height: 1.18;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
 }
 
 .process-arrow {
     position: absolute;
     z-index: 2;
-    top: 60px;
-    right: -14px;
+    top: 75px;
+    right: -7px;
     color: var(--green);
     font-size: 22px;
     line-height: 1;

@@ -1716,7 +1716,7 @@ select option {
 
 .footer p {
     color: #87948b;
-    font-size: 13px;
+    font-size: 16px;
     max-width: 300px
 }
 
@@ -1759,6 +1759,7 @@ select option {
     overflow: visible;
     border-radius: 0;
     background: transparent;
+    margin-inline: auto;
 }
 
 .footer-logo img {
@@ -1771,6 +1772,7 @@ select option {
 
 .footer-brand p {
     margin-top: 12px;
+    text-align: center;
 }
 
 .footer ul.footer-icon-links a,
@@ -1854,6 +1856,10 @@ select option {
     display: inline-flex;
     justify-content: center;
     gap: 16px;
+}
+
+.designed-brand {
+    color: var(--green);
 }
 
 .foot-bottom a:hover {

@@ -2,8 +2,16 @@
   document.documentElement.classList.remove('nojs');
   var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
   var nav=document.getElementById('navlinks'), btn=document.getElementById('menuBtn');
-  if(btn&&nav){btn.addEventListener('click',function(){nav.classList.toggle('open')});
-    nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open')})});}
+  if(btn&&nav){
+    function setMenuOpen(open){
+      nav.classList.toggle('open',open);
+      btn.textContent=open?'\u00D7':'\u2630';
+      btn.setAttribute('aria-expanded',String(open));
+    }
+    setMenuOpen(false);
+    btn.addEventListener('click',function(){setMenuOpen(!nav.classList.contains('open'))});
+    nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenuOpen(false)})});
+  }
   var els=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
